@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body style="background-image: url(MAth.Jpg)">
+    <br />
+    <br />
+    <div id="text" style="text-align: center">
+      <input type="text" id="textLine" />
+    </div>
+    <br />
+
+    <div style="text-align: center; font-size: xx-large">
+      <button id="1" onclick="textLine.value+='1';">1</button>
+      <button id="2" onclick="textLine.value+='2';">2</button>
+      <button id="3" onclick="textLine.value+='3';">3</button>
+    </div>
+    <br />
+
+    <div style="text-align: center; font-size: xx-large">
+      <button id="4" onclick="textLine.value+='4';">4</button>
+      <button id="5" onclick="textLine.value+='5';">5</button>
+      <button id="6" onclick="textLine.value+='6';">6</button>
+    </div>
+    <br />
+    <div style="text-align: center; font-size: xx-large">
+      <button id="7" onclick="textLine.value+='7';">7</button>
+      <button id="8" onclick="textLine.value+='8';">8</button>
+      <button id="9" onclick="textLine.value+='9';">9</button>
+    </div>
+    <br />
+    <div style="text-align: center; font-size: xx-large">
+      <button id="0" onclick="textLine.value+='0';">0</button>
+    </div>
+    <br />
+    <div style="text-align: center; font-size: xx-large">
+      <button style="text-align: center" onclick="textLine.value=''">C</button>
+      <button id="Divain" onclick="value='/';onClick(value);">/</button>
+      <button id="Multi" onclick="value='*';onClick(value);">*</button>
+    </div>
+    <br />
+    <div style="text-align: center; font-size: xx-large">
+      <button id="Minus" onclick="value='-';onClick(value);">-</button>
+      <button id="Plus" onclick="value='+';onClick(value);">+</button>
+      <button onclick="Equle(textLine.value)">=</button>
+    </div>
+    <br />
+    <div style="text-align: center; font-size: xx-large">
+      <button onclick="Big()">Big</button>
+      <button onclick="Normal()">Normal</button>
+      <button onclick="Small()">Small</button>
+    </div>
+    <script>
+      var Action = "";
+      var Num = 0;
+      function onClick(value) {
+        Num = parseInt(textLine.value);
+        Action = value;
+        textLine.value = "";
+      }
+      function Equle(Num2) {
+        if (Action == "*") {
+          textLine.value = Num * parseInt(Num2);
+        }
+
+        if (Action == "+") {
+          textLine.value = Num + parseInt(Num2);
+        }
+
+        if (Action == "-") {
+          textLine.value = Num - parseInt(Num2);
+        }
+
+        if (Action == "/") {
+          textLine.value = Num / parseInt(Num2);
+        }
+      }
+      function Big() {
+        document.getElementById("text").style.fontSize = "150px";
+      }
+      function Small() {
+        document.getElementById("text").style.fontSize = "10px";
+      }
+      function Normal() {
+        document.getElementById("text").style.fontSize = "30px";
+      }
+    </script>
+  </body>
+</html>
